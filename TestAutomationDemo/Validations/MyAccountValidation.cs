@@ -15,7 +15,7 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(myAccount.Header?.Displayed);
+                Assert.IsTrue(DriverService.Instance.GetWebElement(myAccount.Header)?.Displayed);
                 logger.Info("My Account page header text is visible");
             }
             catch (AssertionException)
@@ -29,7 +29,7 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(myAccount.MyAccountLinkList?.Count == 5);
+                Assert.IsTrue(DriverService.Instance.GetWebElements(myAccount.MyAccountLinkList)?.Count == 5);
                 logger.Info("My Account link list is visible");
             }
             catch (AssertionException)
@@ -43,7 +43,8 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(myAccount.UserInfoSpan?.Text == $"{Globals.User.Name} {Globals.User.LastName}");
+                Assert.IsTrue(DriverService.Instance.GetWebElement(myAccount.UserInfoSpan)?.Text 
+                    == $"{Globals.User.Name} {Globals.User.LastName}");
                 logger.Info("User name is displayed");
             }
             catch (AssertionException)

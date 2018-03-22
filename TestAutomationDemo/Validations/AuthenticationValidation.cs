@@ -15,7 +15,7 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(authentication.Header?.Displayed);
+                Assert.IsTrue(DriverService.Instance.GetWebElement(authentication.Header)?.Displayed);
                 logger.Info("Authentication page header text is visible");
             }
             catch (AssertionException)

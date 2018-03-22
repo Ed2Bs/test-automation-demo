@@ -19,7 +19,7 @@ namespace TestAutomationDemo
             try
             {
                 var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                var json = File.ReadAllText(Path.Combine(path, ".\\Data\\seedData.json"));
+                var json = File.ReadAllText(Path.Combine(path, ".\\Data\\testData.json"));
                 var jo = JObject.Parse(json);
 
                 testCases.AddRange(JsonConvert.DeserializeObject<List<TestCase>>(jo["testcases"].ToString()));

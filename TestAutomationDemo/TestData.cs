@@ -51,8 +51,8 @@ namespace TestAutomationDemo
                 {
                     var prop = activeModel.GetProperty(item.ElementIndentifier);
                     var propGetter = prop.GetGetMethod();
-                    var o = propGetter.Invoke(Activator.CreateInstance(activeModel, new object[] { Service.Instance.Driver }), null);
-                    var el = (IWebElement)o;
+                    var o = propGetter.Invoke(Activator.CreateInstance(activeModel, new object[] { DriverService.Instance.Driver }), null);
+                    var el = DriverService.Instance.GetWebElement((By)o);
 
                     switch (item.ElementType)
                     {
@@ -83,7 +83,7 @@ namespace TestAutomationDemo
                                      .ToDictionary(x => x.Key, x => x.Value);
 
             return pageModels
-                .Where(x => Convert.ToBoolean(x.Value.Invoke(Activator.CreateInstance(x.Key, new object[] { Service.Instance.Driver }), null)))
+                .Where(x => Convert.ToBoolean(x.Value.Invoke(Activator.CreateInstance(x.Key, new object[] { DriverService.Instance.Driver }), null)))
                 .FirstOrDefault()
                 .Key;
         }

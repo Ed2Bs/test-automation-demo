@@ -15,7 +15,7 @@ namespace TestAutomationDemo
         CartSummary cartSummary;
         MyAccount myAccount;
 
-        public Pages() => this.driver = Service.Instance.Driver;
+        public Pages() => this.driver = DriverService.Instance.Driver;
 
         public Homepage Homepage => homepage ?? (homepage = new Homepage(driver));
         public Authentication Authentication => authentication ?? (authentication = new Authentication(driver));

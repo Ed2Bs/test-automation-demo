@@ -15,7 +15,7 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(createAnAccount.Header?.Displayed);
+                Assert.IsTrue(DriverService.Instance.GetWebElement(createAnAccount.Header)?.Displayed);
                 logger.Info("Create an Account page header text is visible");
             }
             catch (AssertionException)

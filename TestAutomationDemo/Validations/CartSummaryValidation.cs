@@ -16,7 +16,7 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(cartSummary.ConfirmationMsg?.Displayed);
+                Assert.IsTrue(DriverService.Instance.GetWebElement(cartSummary.ConfirmationMsg)?.Displayed);
                 logger.Info("Confirmation is visible");
             }
             catch (AssertionException)
@@ -30,7 +30,7 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Assert.IsTrue(cartSummary.Header?.Displayed);
+                Assert.IsTrue(DriverService.Instance.GetWebElement(cartSummary.Header)?.Displayed);
                 logger.Info("Cart Summary page header text is visible");
             }
             catch (AssertionException)

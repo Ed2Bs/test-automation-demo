@@ -88,7 +88,7 @@
     <Compile Include="Pages.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service.cs" />
+    <Compile Include="DriverService.cs" />
     <Compile Include="TestSuites\TestBase.cs" />
     <Compile Include="TestSuites\TSAuthentication.cs" />
     <Compile Include="TestSuites\TSCheckout.cs" />
@@ -98,7 +98,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Data\seedData.json">
+    <None Include="Data\testData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="NLog.config">

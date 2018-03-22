@@ -9,15 +9,15 @@ namespace TestAutomationDemo.Models
     public class Product : PageModelBase
     {
         AddToCartPopUp addToCartPopUp;
-        public AddToCartPopUp AddToCartPopUp => addToCartPopUp ?? (addToCartPopUp = new AddToCartPopUp(driver));
+        public AddToCartPopUp AddToCartPopUp => addToCartPopUp ?? (addToCartPopUp = new AddToCartPopUp());
 
-        public IWebElement AddToCart => GetWebElement("//div[@class='box-cart-bottom']//button[@name='Submit']");
+        public By AddToCart => By.XPath("//div[@class='box-cart-bottom']//button[@name='Submit']");
 
-        public override Func<bool> Displayed =>
+        public override Func<bool> IsAtRule =>
             () => driver.FindElement(By.XPath("//h3[@class='page-product-heading']")).Displayed;
 
         public Product(IWebDriver driver) : base(driver) { }
 
-        public void ClickAddToCart() => ClickWebElement(AddToCart);
+        public void ClickAddToCart() => DriverService.Instance.ClickWebElement(AddToCart);
     }
 }

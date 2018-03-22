@@ -1,6 +1,6 @@
 ﻿using NLog;
 using NUnit.Framework;
-using OpenQA.Selenium;
+using System;
 using TestAutomationDemo.Models;
 
 namespace TestAutomationDemo.Validations
@@ -16,17 +16,18 @@ namespace TestAutomationDemo.Validations
         {
             try
             {
-                Service.WaitFor((d) => {
-                    var el = product.AddToCartPopUp.AddToCartPopUpTitle;
-                    if (el.Displayed)
-                        return el;
+                DriverService.Instance.WaitUntil((d) =>
+                {
+                    var el = d.FindElement(product.AddToCartPopUp.AddToCartPopUpTitle);
+                    if (el != null && el.Displayed) return el;
+
                     return null;
                 });
 
-                Assert.IsTrue(product.AddToCartPopUp.AddToCartPopUpTitle?.Displayed);
+                Assert.IsTrue(DriverService.Instance.GetWebElement(product.AddToCartPopUp.AddToCartPopUpTitle)?.Displayed);
                 logger.Info("Add To Cart PopUp is visible");
             }
-            catch (AssertionException)
+            catch (Exception)
             {
                 logger.Error("Add To Cart PopUp is not visible");
                 throw;

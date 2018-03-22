@@ -1,5 +1,6 @@
 ﻿using NLog;
 using NUnit.Framework;
+using System.Diagnostics;
 
 namespace TestAutomationDemo.TestSuites
 {
@@ -33,7 +34,7 @@ namespace TestAutomationDemo.TestSuites
             TestName = TestContext.CurrentContext.Test.MethodName;
             logger.Info($"Starting test: {TestName}");
 
-            Service.Instance.DriverInit();
+            DriverService.Instance.DriverInit();
 
             pages = new Pages();
             validation = new Validation(pages);
@@ -44,7 +45,7 @@ namespace TestAutomationDemo.TestSuites
         [TearDown]
         public void TearDown()
         {
-            Service.Instance.QuitDriver();
+            DriverService.Instance.QuitDriver();
             logger.Info("Browser closed, webdriver disposed");
         }
 
@@ -52,6 +53,10 @@ namespace TestAutomationDemo.TestSuites
         public void OneTimeTearDown()
         {
             logger.Info("Stopping test fixture");
+
+            //clean up leftovers
+            foreach (var p in Process.GetProcessesByName("chromedriver"))
+                if (!p.HasExited) p?.Kill();
         }
     }
 }
