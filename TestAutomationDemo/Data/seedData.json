@@ -1,0 +1,280 @@
+﻿{
+	"testcases": [{
+		"TestName": "TC001CreateAccount",
+		"PageModels": [{
+			"PageModelName": "Authentication",
+			"TestDataValues": [{
+				"ElementIndentifier": "CreateAnAccountEmailInput",
+				"ElementType": "Input",
+				"Value": "randomEmail()",
+				"TestRound": "1"
+			}]
+		},
+		{
+			"PageModelName": "CreateAnAccount",
+			"TestDataValues": [{
+				"ElementIndentifier": "FirstNameInput",
+				"ElementType": "Input",
+				"Value": "randomName()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "LastNameInput",
+				"ElementType": "Input",
+				"Value": "randomLastName()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "PasswordInput",
+				"ElementType": "Input",
+				"Value": "password()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "AddressInput",
+				"ElementType": "Input",
+				"Value": "1111 Test Drive",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "CityInput",
+				"ElementType": "Input",
+				"Value": "Raleigh",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "StateInput",
+				"ElementType": "Input",
+				"Value": "North Carolina",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "ZipInput",
+				"ElementType": "Input",
+				"Value": "27611",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "MobilePhoneInput",
+				"ElementType": "Input",
+				"Value": "19102222222",
+				"TestRound": "1"
+			}]
+		}]
+	},
+	{
+		"TestName": "TC002LogIn",
+		"PageModels": [{
+			"PageModelName": "Authentication",
+			"TestDataValues": [{
+				"ElementIndentifier": "CreateAnAccountEmailInput",
+				"ElementType": "Input",
+				"Value": "randomEmail()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "SignInEmailInput",
+				"ElementType": "Input",
+				"Value": "randomEmail()",
+				"TestRound": "2"
+			},
+			{
+				"ElementIndentifier": "SignInPwdInput",
+				"ElementType": "Input",
+				"Value": "password()",
+				"TestRound": "2"
+			}]
+		},
+		{
+			"PageModelName": "CreateAnAccount",
+			"TestDataValues": [{
+				"ElementIndentifier": "FirstNameInput",
+				"ElementType": "Input",
+				"Value": "randomName()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "LastNameInput",
+				"ElementType": "Input",
+				"Value": "randomLastName()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "PasswordInput",
+				"ElementType": "Input",
+				"Value": "password()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "AddressInput",
+				"ElementType": "Input",
+				"Value": "1111 Test Drive",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "CityInput",
+				"ElementType": "Input",
+				"Value": "Raleigh",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "StateInput",
+				"ElementType": "Input",
+				"Value": "North Carolina",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "ZipInput",
+				"ElementType": "Input",
+				"Value": "27611",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "MobilePhoneInput",
+				"ElementType": "Input",
+				"Value": "19102222222",
+				"TestRound": "1"
+			}]
+		}]
+	},
+	{
+		"TestName": "TC003CheckoutUserSignedIn",
+		"PageModels": [{
+			"PageModelName": "Authentication",
+			"TestDataValues": [{
+				"ElementIndentifier": "CreateAnAccountEmailInput",
+				"ElementType": "Input",
+				"Value": "randomEmail()",
+				"TestRound": "1"
+			}]
+		},
+		{
+			"PageModelName": "CreateAnAccount",
+			"TestDataValues": [{
+				"ElementIndentifier": "FirstNameInput",
+				"ElementType": "Input",
+				"Value": "randomName()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "LastNameInput",
+				"ElementType": "Input",
+				"Value": "randomLastName()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "PasswordInput",
+				"ElementType": "Input",
+				"Value": "password()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "AddressInput",
+				"ElementType": "Input",
+				"Value": "1111 Test Drive",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "CityInput",
+				"ElementType": "Input",
+				"Value": "Raleigh",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "StateInput",
+				"ElementType": "Input",
+				"Value": "North Carolina",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "ZipInput",
+				"ElementType": "Input",
+				"Value": "27611",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "MobilePhoneInput",
+				"ElementType": "Input",
+				"Value": "19102222222",
+				"TestRound": "1"
+			}]
+		}]
+	},
+	{
+		"TestName": "TC004CheckoutUserNotSignedIn",
+		"PageModels": [{
+			"PageModelName": "Authentication",
+			"TestDataValues": [{
+				"ElementIndentifier": "CreateAnAccountEmailInput",
+				"ElementType": "Input",
+				"Value": "randomEmail()",
+				"TestRound": "1"
+			},
+			{
+				"ElementIndentifier": "SignInEmailInput",
+				"ElementType": "Input",
+				"Value": "randomEmail()",
+				"TestRound": "2"
+			},
+			{
+				"ElementIndentifier": "SignInPwdInput",
+				"ElementType": "Input",
+				"Value": "password()",
+				"TestRound": "2"
+			}]
+		},
+		{
+			"PageModelName": "CreateAnAccount",
+      "TestDataValues": [
+        {
+          "ElementIndentifier": "FirstNameInput",
+          "ElementType": "Input",
+          "Value": "randomName()",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "LastNameInput",
+          "ElementType": "Input",
+          "Value": "randomLastName()",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "PasswordInput",
+          "ElementType": "Input",
+          "Value": "password()",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "AddressInput",
+          "ElementType": "Input",
+          "Value": "1111 Test Drive",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "CityInput",
+          "ElementType": "Input",
+          "Value": "Raleigh",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "StateInput",
+          "ElementType": "Input",
+          "Value": "North Carolina",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "ZipInput",
+          "ElementType": "Input",
+          "Value": "27611",
+          "TestRound": "1"
+        },
+        {
+          "ElementIndentifier": "MobilePhoneInput",
+          "ElementType": "Input",
+          "Value": "19102222222",
+          "TestRound": "1"
+        }
+      ]
+		}]
+	}]
+}
